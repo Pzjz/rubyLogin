@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :books
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get 'hola', to: 'welcome#hello'
+  get 'sessions/login', to: 'sessions#new'
+  post 'sessions', to: 'sessions#create'
+  delete 'sessions', to: 'sessions#destroy'
+  resources :users
+  root 'sessions#new'
 end
